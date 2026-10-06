@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            background: #eef1f6;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator {
+            width: min(100% - 32px, 340px);
+            padding: 20px;
+            display: grid;
+            gap: 16px;
+            border-radius: 20px;
+            background: #202633;
+            box-shadow: 0 18px 40px #17202f33;
+        }
+
+        .display {
+            min-height: 100px;
+            padding: 16px;
+            display: grid;
+            grid-template-rows: minmax(20px, auto) auto;
+            align-content: end;
+            justify-items: end;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #151a23;
+            color: #fff;
+        }
+
+        .previous-value {
+            min-height: 20px;
+            color: #9da7b8;
+            font-size: 14px;
+        }
+
+        .current-value {
+            max-width: 100%;
+            overflow: hidden;
+            font-size: 36px;
+            text-overflow: ellipsis;
+        }
+
+        .keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .keys button {
+            min-height: 58px;
+            border: 0;
+            border-radius: 12px;
+            background: #343d4d;
+            color: #fff;
+            font: inherit;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .keys button:hover {
+            background: #424d60;
+        }
+
+        .keys .utility {
+            background: #485367;
+        }
+
+        .keys .operator {
+            background: #e28a43;
+        }
+
+        .keys .operator:hover {
+            background: #f09a52;
+        }
+
+        .keys .zero {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <main class="calculator" aria-label="Calculator">
+        <section class="display" aria-label="Calculator display">
+            <div class="previous-value" aria-hidden="true">&nbsp;</div>
+            <output class="current-value" aria-live="polite">0</output>
+        </section>
+        <section class="keys" aria-label="Calculator keys">
+            <button class="utility" type="button">AC</button>
+            <button class="utility" type="button" aria-label="Toggle sign">+/-</button>
+            <button class="utility" type="button" aria-label="Percent">%</button>
+            <button class="operator" type="button" aria-label="Divide">÷</button>
+
+            <button type="button">7</button>
+            <button type="button">8</button>
+            <button type="button">9</button>
+            <button class="operator" type="button" aria-label="Multiply">×</button>
+
+            <button type="button">4</button>
+            <button type="button">5</button>
+            <button type="button">6</button>
+            <button class="operator" type="button" aria-label="Subtract">−</button>
+
+            <button type="button">1</button>
+            <button type="button">2</button>
+            <button type="button">3</button>
+            <button class="operator" type="button" aria-label="Add">+</button>
+
+            <button class="zero" type="button">0</button>
+            <button type="button">.</button>
+            <button class="operator" type="button" aria-label="Equals">=</button>
+        </section>
+    </main>
+</body>
+</html>
